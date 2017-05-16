@@ -1,1 +1,1 @@
-# activemq-camel-spring
+# ActiveMQ Camel - Spring
