@@ -21,13 +21,16 @@
         <property name="connectionFactory" ref="pooledConnectionFactory" />
     </bean>
 
+    <bean id="activeMQRouteBuilder" class="com.mycompany.activemq_camel_spring.ActiveMQRouteBuilder"/>
+
     <camelContext xmlns="http://camel.apache.org/schema/spring">
-        <endpoint id="testBeanUriHelloMethod" uri="bean:testBean?method=hello"/>
-        <route>
-            <from uri="activemq:queue:start"/>
-            <to ref="testBeanUriHelloMethod"/>
-            <to uri="stream:out"/>
-        </route>
+        <!--<endpoint id="testBeanUriHelloMethod" uri="bean:testBean?method=hello"/>-->
+        <!--<route>-->
+            <!--<from uri="activemq:queue:start"/>-->
+            <!--<to ref="testBeanUriHelloMethod"/>-->
+            <!--<to uri="stream:out"/>-->
+        <!--</route>-->
+        <routeBuilder ref="activeMQRouteBuilder"/>
     </camelContext>
 
 </beans>
