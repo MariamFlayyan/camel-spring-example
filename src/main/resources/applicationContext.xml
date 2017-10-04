@@ -21,6 +21,13 @@
         <property name="connectionFactory" ref="pooledConnectionFactory" />
     </bean>
 
-    
+    <camelContext xmlns="http://camel.apache.org/schema/spring">
+        <endpoint id="testBeanUriHelloMethod" uri="bean:testBean?method=hello"/>
+        <route>
+            <from uri="activemq:queue:start"/>
+            <to ref="testBeanUriHelloMethod"/>
+            <to uri="stream:out"/>
+        </route>
+    </camelContext>
 
 </beans>
