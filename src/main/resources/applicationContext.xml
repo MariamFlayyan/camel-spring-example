@@ -22,6 +22,7 @@
     </bean>
 
     <bean id="activeMQRouteBuilder" class="com.mycompany.activemq_camel_spring.ActiveMQRouteBuilder"/>
+    <bean id="myProcessor" class="com.mycompany.activemq_camel_spring.MyProcessor"/>
 
     <camelContext xmlns="http://camel.apache.org/schema/spring">
         <!--<endpoint id="testBeanUriHelloMethod" uri="bean:testBean?method=hello"/>-->
@@ -31,6 +32,13 @@
             <!--<to uri="stream:out"/>-->
         <!--</route>-->
         <routeBuilder ref="activeMQRouteBuilder"/>
+
+        <route>
+            <from uri="timer:foo?period=1s"/>
+            <process ref="myProcessor"/>
+            <to uri="stream:out"/>
+        </route>
+
     </camelContext>
 
 </beans>
