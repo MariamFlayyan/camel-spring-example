@@ -3,8 +3,9 @@
  * | Copyright © 2017 Colin But. All rights reserved. 
  * |-------------------------------------------------
  */
-package com.mycompany.activemq_camel_spring;
+package com.mycompany.activemq_camel_spring.examples;
 
+import com.mycompany.activemq_camel_spring.bean.TestBean;
 import org.apache.activemq.camel.component.ActiveMQComponent;
 import org.apache.camel.CamelContext;
 import org.apache.camel.ProducerTemplate;

@@ -5,7 +5,7 @@
         xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
 
-    <bean id="testBean" class="com.mycompany.activemq_camel_spring.TestBean"/>
+    <bean id="testBean" class="com.mycompany.activemq_camel_spring.bean.TestBean"/>
 
     <!-- JMS configurations (using ActiveMQ) -->
     <bean id="jmsConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
@@ -21,8 +21,8 @@
         <property name="connectionFactory" ref="pooledConnectionFactory" />
     </bean>
 
-    <bean id="activeMQRouteBuilder" class="com.mycompany.activemq_camel_spring.ActiveMQRouteBuilder"/>
-    <bean id="myProcessor" class="com.mycompany.activemq_camel_spring.MyProcessor"/>
+    <bean id="activeMQRouteBuilder" class="com.mycompany.activemq_camel_spring.routebuilder.ActiveMQRouteBuilder"/>
+    <bean id="myProcessor" class="com.mycompany.activemq_camel_spring.processor.MyProcessor"/>
 
     <camelContext xmlns="http://camel.apache.org/schema/spring">
         <!--<endpoint id="testBeanUriHelloMethod" uri="bean:testBean?method=hello"/>-->

@@ -3,7 +3,7 @@
  * | Copyright © 2017 Colin But. All rights reserved. 
  * |-------------------------------------------------
  */
-package com.mycompany.activemq_camel_spring;
+package com.mycompany.activemq_camel_spring.processor;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
