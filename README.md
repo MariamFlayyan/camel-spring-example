@@ -1,4 +1,4 @@
-# Camel - ActiveMQ - Spring
+# Camel - Spring
 
 This project explores different ways to use Apache Camel (the enterprise application integration framework) with the Spring (Application development framework).
 
